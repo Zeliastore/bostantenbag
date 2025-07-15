@@ -1,811 +1,147 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPECIAL BUNDLE 2PCS - Hijab Segi Empat Polycotton Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Premium Product Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .product-card {
+            transition: all 0.3s ease;
         }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .main-product {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
         }
-
-        /* Header Section */
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
+        .discount-badge {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 20px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            top: 10px;
+            right: 10px;
             animation: pulse 2s infinite;
         }
-
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
-
-        .main-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #fff, #f0f0f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: slideInUp 1s ease-out;
-        }
-
-        .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            animation: slideInUp 1s ease-out 0.2s both;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Stats Section */
-        .stats {
-            background: #f8f9fa;
-            padding: 60px 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            text-align: center;
-        }
-
-        .stat-item {
-            background: white;
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #667eea;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: #666;
-            font-weight: 500;
-        }
-
-        /* Product Section */
-        .product-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .product-images {
-            position: relative;
-        }
-
-        .main-image {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .main-image:hover {
-            transform: scale(1.05);
-        }
-
-        .thumbnail-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .thumbnail {
-            width: 100%;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .thumbnail:hover, .thumbnail.active {
-            border-color: #667eea;
-            transform: scale(1.1);
-        }
-
-        .product-info h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .product-description {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 30px;
-            line-height: 1.8;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .features-list li {
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-            color: #555;
-        }
-
-        .features-list li i {
-            color: #667eea;
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-
-        /* Price Banner */
-        .price-banner {
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .price-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .price-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .price-old {
-            font-size: 1.5rem;
-            text-decoration: line-through;
-            opacity: 0.8;
-            margin-bottom: 10px;
-        }
-
-        .price-new {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .savings {
-            font-size: 1.3rem;
-            background: rgba(255,255,255,0.2);
-            padding: 10px 20px;
-            border-radius: 50px;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-
-        /* Countdown Timer */
-        .countdown-section {
-            background: #2c3e50;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .time-unit {
-            background: rgba(255,255,255,0.1);
-            padding: 20px;
-            border-radius: 15px;
-            min-width: 100px;
-            backdrop-filter: blur(10px);
-        }
-
-        .time-value {
-            font-size: 2.5rem;
-            font-weight: 800;
-            display: block;
-        }
-
-        .time-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #333;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .testimonial:hover {
-            transform: translateY(-5px);
-        }
-
-        .stars {
-            color: #f39c12;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: #333;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 20px 50px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 700;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-
-        /* How to Use */
-        .how-to-use {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .how-to-use h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: #333;
-        }
-
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .step {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0 auto 20px;
-        }
-
-        .step h3 {
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .step p {
-            color: #666;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .main-title {
-                font-size: 2.5rem;
-            }
-
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .countdown-timer {
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-
-            .time-unit {
-                min-width: 80px;
-                padding: 15px;
-            }
-
-            .time-value {
-                font-size: 2rem;
-            }
-
-            .price-new {
-                font-size: 3rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 15px;
-            }
-
-            .main-title {
-                font-size: 2rem;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Floating Elements */
-        .floating-element {
-            position: absolute;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            top: 20%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(3) {
-            bottom: 30%;
-            left: 5%;
-            animation-delay: 4s;
+        .promo-section {
+            background: linear-gradient(to right, #f8fafc, #f1f5f9);
         }
     </style>
 </head>
-<body>
-    <!-- Header Section -->
-    <section class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="badge">
-                    <i class="fas fa-fire"></i> PROMO TERBATAS
-                </div>
-                <h1 class="main-title">Spesial Bundle Beli 1 Gratis 1</h1>
-                <p class="subtitle">Hijab Segi Empat Polycotton Premium 110x110cm - Kualitas Terbaik untuk Muslimah Modern</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number" id="viewers">1,247</div>
-                    <div class="stat-label">Sedang Melihat</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" id="stock">47</div>
-                    <div class="stat-label">Stok Tersisa</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">4.9</div>
-                    <div class="stat-label">Rating Bintang</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">2,834</div>
-                    <div class="stat-label">Terjual</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product Section -->
-    <section class="product-section">
-        <div class="container">
-            <div class="product-grid">
-                <div class="product-images">
-                    <img src="https://cdn.orderonline.id/uploads/images_7683611748789446554.png" alt="Hijab Polycotton Bundle" class="main-image" id="mainImage">
-                    <div class="thumbnail-grid">
-                        <img src="https://cdn.orderonline.id/uploads/images_7683611748789446554.png" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(this.src)">
-                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk2-m70i0j5myur87c.webp" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this.src)">
-                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkd-m70i0j5mxg6sca.webp" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this.src)">
+<body class="bg-gray-50 font-sans">
+  <a href="https://bostanten-bag.flashsale.web.id/" class="Belanja Sekarang">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Main Product -->
+        <div class="main-product rounded-xl p-6 mb-12 relative overflow-hidden">
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2">
+                    <div class="relative">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbkd-m9nvdiutwl7i10.webp" 
+                             alt="Premium Smartwatch" 
+                             class="w-full h-auto rounded-lg object-cover shadow-lg">
+                        <div class="discount-badge bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                            -54%
+                        </div>
                     </div>
                 </div>
-                <div class="product-info">
-                    <h2>Hijab Polycotton Premium Bundle</h2>
-                    <p class="product-description">
-                        Dapatkan 2 pcs hijab segi empat polycotton premium dengan kualitas terbaik! Bahan yang lembut, tidak mudah kusut, dan nyaman digunakan sepanjang hari. Cocok untuk berbagai acara formal maupun casual.
+                <div class="lg:w-1/2 flex flex-col justify-center">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">BOSTANTEN Women Shoulder Bag</h1>
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-600 ml-2">(1,348 reviews)</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Tas wanita elegan dengan desain modern yang cocok untuk segala kesempatan
                     </p>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i> Bahan Polycotton Premium (110x110cm)</li>
-                        <li><i class="fas fa-check-circle"></i> Tidak Mudah Kusut & Licin</li>
-                        <li><i class="fas fa-check-circle"></i> Beli 1 Gratis 1 (Total 2 Pcs)</li>
-                        <li><i class="fas fa-check-circle"></i> Tersedia Berbagai Warna Cantik</li>
-                        <li><i class="fas fa-check-circle"></i> Cocok untuk Segala Acara</li>
-                        <li><i class="fas fa-check-circle"></i> Mudah Dirawat & Tahan Lama</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Price Banner -->
-    <section class="price-banner">
-        <div class="container">
-            <div class="price-content">
-                <div class="price-old">Harga Normal: Rp 223.498</div>
-                <div class="price-new">Rp 149.999</div>
-                <div class="savings">Hemat 33% - Beli 1 Gratis 1!</div>
-                <p style="font-size: 1.2rem; margin-bottom: 30px;">
-                    <i class="fas fa-shipping-fast"></i> GRATIS ONGKIR Se-Indonesia
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Countdown Timer -->
-    <section class="countdown-section">
-        <div class="container">
-            <h2 style="margin-bottom: 20px;">Promo Berakhir Dalam:</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Jangan sampai kehabisan! Stok terbatas untuk promo ini.</p>
-            <div class="countdown-timer">
-                <div class="time-unit">
-                    <span class="time-value" id="hours">07</span>
-                    <span class="time-label">Jam</span>
-                </div>
-                <div class="time-unit">
-                    <span class="time-value" id="minutes">23</span>
-                    <span class="time-label">Menit</span>
-                </div>
-                <div class="time-unit">
-                    <span class="time-value" id="seconds">45</span>
-                    <span class="time-label">Detik</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How to Use -->
-    <section class="how-to-use">
-        <div class="container">
-            <h2>Cara Penggunaan yang Mudah</h2>
-            <div class="steps-grid">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Pilih Gaya</h3>
-                    <p>Tentukan gaya hijab yang ingin Anda buat sesuai dengan outfit dan acara</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Lipat & Bentuk</h3>
-                    <p>Lipat hijab sesuai bentuk wajah Anda untuk hasil yang maksimal dan nyaman</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Sematkan</h3>
-                    <p>Gunakan jarum pentul atau peniti untuk menyematkan hijab dengan rapi</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Siap Digunakan</h3>
-                    <p>Hijab siap digunakan sepanjang hari dengan kenyamanan maksimal</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2>Apa Kata Mereka?</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="flex items-center mb-6">
+                        <span class="text-3xl font-bold text-gray-800">Rp 179.876</span>
+                        <span class="text-lg text-gray-500 line-through ml-3">Rp 349.000</span>
                     </div>
-                    <p class="testimonial-text">"Hijabnya bagus banget! Bahannya lembut dan tidak mudah kusut. Dapat 2 pcs dengan harga segini worth it banget!"</p>
-                    <p class="testimonial-author">- Sari, Jakarta</p>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                            <i class="fas fa-shopping-cart mr-2"></i> Belanja Sekarang
                     </div>
-                    <p class="testimonial-text">"Kualitas premium dengan harga terjangkau. Cocok untuk ke kantor dan acara formal. Sudah order berkali-kali!"</p>
-                    <p class="testimonial-author">- Rina, Bandung</p>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="flex items-center text-gray-500 text-sm">
+                    <span>Gunakan kode <strong>DISKONONGKIR</strong> untuk potongan ongkir</span>
                     </div>
-                    <p class="testimonial-text">"Pengiriman cepat, packaging rapi. Hijabnya sesuai ekspektasi, bahan polycotton memang beda dari yang biasa!"</p>
-                    <p class="testimonial-author">- Maya, Surabaya</p>
-                </div>
-                <div class="testimonial">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Terima kasih! Hijabnya cantik dan nyaman dipakai. Warnanya juga sesuai dengan foto. Highly recommended!"</p>
-                    <p class="testimonial-author">- Dewi, Yogyakarta</p>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Jangan Sampai Kehabisan!</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 40px;">Promo terbatas hanya untuk 100 pembeli pertama hari ini!</p>
-            <a href="https://nava.orderonline.id/checkout-polycotton-rectangle-hijab" class="cta-button" target="_blank">
-                <i class="fas fa-shopping-cart"></i> AMBIL PROMO SEKARANG JUGA
-            </a>
-            <p style="margin-top: 30px; font-size: 1.1rem;">
-                <i class="fas fa-shield-alt"></i> Garansi 100% Uang Kembali Jika Tidak Puas
-            </p>
-        </div>
-    </section>
+        <!-- Bump Products -->
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Mungkin anda juga suka</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <!-- Product 1 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md relative">
+                <a href="https://coraldaisy-handbag.flashsale.web.id/" class="block">
+                    <div class="relative">
+                        <img src="https://cdn.orderonline.id/uploads/images_7036531752561455254.png" 
+                             alt="#" 
+                             class="w-full h-48 object-cover">
+                        <div class="discount-badge bg-green-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                            Best Seller
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1 text-gray-800">CORALDAISY Women Handbag</h3>
+                        <p class="text-gray-600 text-sm mb-2">Tas wanita elegan dengan desain modern yang cocok untuk berbagai kesempatan.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">Rp 199.999</span>
+                            <span class="text-xs text-gray-500 line-through">Rp 399.999</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-    <script>
-        // Image Gallery
-        function changeImage(src) {
-            document.getElementById('mainImage').src = src;
-            
-            // Update active thumbnail
-            document.querySelectorAll('.thumbnail').forEach(thumb => {
-                thumb.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
+            <!-- Product 2 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md relative">
+                <a href="https://zeliastore.github.io/Premium-Diamond-Crossbody-Bag" class="block">
+                    <div class="relative">
+                        <img src="https://cdn.orderonline.id/uploads/images_7891461750975566819.png" 
+                             alt="MacBook Pro" 
+                             class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1 text-gray-800">Premium Diamond Crossbody Bag</h3>
+                        <p class="text-gray-600 text-sm mb-2">Tas eksklusif dengan kristal authentic yang memancarkan kemewahan di setiap langkahmu.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">Rp179.000</span>
+                            <span class="text-xs text-gray-500 line-through">Rp 249.000</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
 
-        // Dynamic Counters
-        function updateCounters() {
-            const viewers = document.getElementById('viewers');
-            const stock = document.getElementById('stock');
-            
-            // Simulate dynamic viewers (1000-1500)
-            const currentViewers = Math.floor(Math.random() * 500) + 1000;
-            viewers.textContent = currentViewers.toLocaleString();
-            
-            // Simulate decreasing stock (30-50)
-            const currentStock = Math.floor(Math.random() * 20) + 30;
-            stock.textContent = currentStock;
-        }
-
-        // Countdown Timer
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const tomorrow = new Date();
-            tomorrow.setDate(tomorrow.getDate() + 1);
-            tomorrow.setHours(0, 0, 0, 0);
-            const distance = tomorrow - now;
-
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-
-        // Smooth Scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Initialize functions
-        updateCounters();
-        updateCountdown();
-
-        // Update every few seconds
-        setInterval(updateCounters, 8000);
-        setInterval(updateCountdown, 1000);
-
-        // Add scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections for scroll animations
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
-        });
-
-        // Add some interactive elements
-        document.querySelectorAll('.stat-item, .testimonial, .step').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px) scale(1.02)';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-    </script>
+            <!-- Product 3 -->
+            <div class="product-card bg-white rounded-lg overflow-hidden shadow-md relative">
+                <a href="https://small-square-large-bag.flashsale.web.id/" class="block">
+                    <div class="relative">
+                        <img src="https://cdn.orderonline.id/uploads/images_6952001750975566854.png" 
+                             alt="#" 
+                             class="w-full h-48 object-cover">
+                        <div class="discount-badge bg-red-500 text-white px-2 py-1 rounded-full text-xs font-bold">
+                            -33%
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-lg mb-1 text-gray-800">New Small Square Large Bag</h3>
+                        <p class="text-gray-600 text-sm mb-2">Tas elegan dengan desain minimalis yang cocok untuk segala acara. Bahan premium dengan daya tahan tinggi dan kapasitas besar namun tetap compact.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-gray-800">Rp175.432</span>
+                            <span class="text-xs text-gray-500 line-through">Rp260.750</span>
+                        </div>
+                    </div>
+</script>
 </body>
 </html>
